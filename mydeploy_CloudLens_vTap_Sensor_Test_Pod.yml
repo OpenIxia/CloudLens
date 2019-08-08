@@ -1,0 +1,52 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: perf-app-vmh
+spec:
+  selector:
+    matchLabels:
+      app: perf-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: perf-app
+    spec:
+      containers:
+      - name: iperf
+        image: 10.25.16.180:5000/myapp:latest
+        resources:
+            requests:
+               memory: "4G"
+               cpu: "2"
+        ports:
+        - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: perf-measure-app-vmh
+spec:
+  selector:
+    matchLabels:
+      app: perf-measure-app-vmh
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: perf-measure-app-vmh
+    spec:
+      containers:
+      - name: iperf
+        image: 10.25.16.180:5000/myapp:latest
+        resources:
+           requests:
+              memory: "4G"
+              cpu: "2"
+        ports:
+        - containerPort: 80
+      - name: cloudlens
+        image: 10.25.16.180:5000/sensor
+        resources:
+           requests:
