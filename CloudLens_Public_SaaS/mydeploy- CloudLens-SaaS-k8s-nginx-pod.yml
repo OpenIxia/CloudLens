@@ -26,7 +26,7 @@ spec:
        - '--server'
        - agent.ixia.cloud
        - '--apikey'
-       - s73VYBD9oNc5o7Q6kGKdks8467YSeyFFr44ey8fzA
+       - s73VYBD9oNd5o7Q2kGKdks8467YSeyFFr44ey8fzA
        - '--custom_tags'
        - app=kube
        - '--accept_eula'
