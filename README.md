@@ -9,5 +9,5 @@ Overview
       tags for your own deployment. 
       
       •	For CloudLens Private vTap Sensor, the 'yaml' files require careful inspection modifying registry image 
-      location, sensor_pan_cfg.yml, and group tags for you own deployment. 
+      location, sensor_pan_cfg.yml location, and group tags for you own deployment. 
 
